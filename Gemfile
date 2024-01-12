@@ -37,6 +37,7 @@ gem 'redis', '>= 4.0.1'
 gem 'omniauth-github'
 gem 'omniauth-rails_csrf_protection'
 
+gem 'bootstrap-rubygem'
 gem 'rubocop'
 gem 'rubocop-rails'
 gem 'slim_lint'
@@ -59,6 +60,7 @@ gem 'bootsnap', require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri windows]
+  gem 'dotenv-rails'
 end
 
 group :development do
