@@ -2,11 +2,16 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
   a.navbar-brand href="#" YourAppName
   button.navbar-toggler type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
     span.navbar-toggler-icon
+  = current_user.name if current_user.present?
   .collapse.navbar-collapse#navbarNav
-    ul.navbar-nav
-      li.nav-item.active
-        a.nav-link href="#" Home span.sr-only (current)
-      li.nav-item.me-2
-        = button_to auth_request_path('github'), data: { turbo: false }, method: :post, class: 'nav-link text-dark' do
-          span.bi.bi-github.me-2
-          = 'Github login'
+    ul.navbar-nav.flex.flex-grow-1
+      li.nav-item.ms-auto
+        - if signed_in?
+          = button_to web_auth_logout_path, data: { turbo: false }, method: :post, class: 'nav-link text-dark' do
+            span.bi.bi-github.me-2
+            = 'Logout'
+        - else
+          = button_to auth_request_path('github'), data: { turbo: false }, method: :post, class: 'nav-link text-dark' do
+            span.bi.bi-github.me-2
+            = 'Github login'
+

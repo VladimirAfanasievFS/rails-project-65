@@ -38,10 +38,10 @@ gem 'omniauth-github'
 gem 'omniauth-rails_csrf_protection'
 
 gem 'bootstrap-rubygem'
+gem 'faker'
 gem 'rubocop'
 gem 'rubocop-rails'
 gem 'slim_lint'
-
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 

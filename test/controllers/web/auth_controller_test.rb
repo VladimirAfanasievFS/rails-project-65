@@ -1,3 +1,7 @@
+# frozen_string_literal: true
+
+require 'test_helper'
+
 class Web::AuthControllerTest < ActionDispatch::IntegrationTest
   test 'check github auth' do
     post auth_request_path('github')
